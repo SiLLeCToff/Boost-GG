@@ -10,6 +10,9 @@ import {
 import Admin from "../pages/Admin.tsx";
 import Dashboard from "../pages/Dashboard.tsx";
 import Profile from "../pages/Profile.tsx";
+import Auth from "../pages/Auth.tsx";
+import Main from "../pages/Main.tsx";
+import Payment from "../pages/Payment.tsx";
 
 
 export const adminRoutes = [
@@ -35,24 +38,20 @@ export const authRoutes = [
 
 export const publicRoutes = [
     {
-        path: DASHBOARD_ROUTE,
-        Component: <Dashboard/>
-    },
-    {
         path: REGISTRATION_ROUTE,
-        Component: <Dashboard/>
+        Component: <Auth/>
     },
     {
         path: LOGIN_ROUTE,
-        Component: <Dashboard/>
+        Component: <Auth/>
     },
     {
         path: MAIN_ROUTE,
-        Component: <Dashboard/>
+        Component: <Main/>
     },
     {
         path: PAYMENT_ROUTE,
-        Component: <Dashboard/>
+        Component: <Payment/>
     }
 
 ];

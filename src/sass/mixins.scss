@@ -1,0 +1,4 @@
+@mixin ui-bg {
+  background: rgb(24,27,33);
+  background: radial-gradient(circle, rgba(24,27,33,1) 18%, rgba(41,46,55,1) 94%);
+}

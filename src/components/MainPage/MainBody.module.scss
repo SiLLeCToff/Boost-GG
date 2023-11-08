@@ -1,0 +1,23 @@
+@import  "../../sass/variables";
+@import "../../sass/mixins";
+
+.container {
+  //@include ui-bg;
+  @apply w-full h-screen flex;
+  background-color: white;
+}
+
+
+.navbar {
+
+  .nav {
+    @include ui-bg;
+    @apply mt-[20px] fixed w-[15%] h-[300px] rounded-[20px]
+  }
+
+  @apply w-[16%] flex h-full justify-center relative
+}
+
+.main {
+@apply w-[70%] flex h-full
+}
