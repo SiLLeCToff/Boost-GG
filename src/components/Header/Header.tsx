@@ -1,8 +1,8 @@
-
+import styles from "./Header.module.scss"
 const Header = () => {
     return (
-        <div>
-            <h1>Hi</h1>
+        <div className={styles.header}>
+            <p className="text-red-800">Hiss</p>
         </div>
     );
 };

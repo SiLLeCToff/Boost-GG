@@ -1,0 +1,6 @@
+@import "../../sass/variables";
+
+.header {
+  @apply w-screen h-[200px]  flex;
+  background-color: $accent;
+}
