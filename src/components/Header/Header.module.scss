@@ -1,6 +1,9 @@
 @import "../../sass/variables";
+@import "../../sass/mixins";
 
 .header {
-  @apply w-full bg-[#0d1d21] h-[100px] ;
-  background-color: $UI;
+  @include header-bg;
+  @apply w-full h-[75px]  sticky top-[0px] z-[9999];
+
+
 }

@@ -1,4 +1,29 @@
 @mixin ui-bg {
   background: rgb(24,27,33);
-  background: radial-gradient(circle, rgba(24,27,33,1) 18%, rgba(41,46,55,1) 94%);
+  background: radial-gradient(circle, rgba(24,27,33,0.9) 18%, rgba(0, 0, 0, 0.9) 94%);
+}
+
+@mixin header-bg {
+  background: rgb(24,27,33);
+  background: radial-gradient(circle, rgba(24,27,33,0.6) 18%, rgba(0, 0, 0, 0.9) 94%);
+}
+
+@mixin background {
+  position: relative;
+  background: url("../assets/images/bgzip.jpg");
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Цвет затемнения и уровень прозрачности */
+  }
+}
+
+@mixin border-glow {
+  border-color: rgba(59, 204, 28, 0.6);
+  box-shadow: 0 0 3px 0px rgba(59, 204, 28, 0.32);
 }

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -20,6 +20,7 @@
 
 
 body {
+  background-color: black;
 margin: 0;
   padding: 0;
   height: 100vh;
@@ -37,4 +38,41 @@ margin: 0;
 /*  button {*/
 /*    background-color: #f9f9f9;*/
 /*  }*/
+/*}*/
+
+/*!* Firefox *!*/
+/** {*/
+/*  scrollbar-width: thin;*/
+/*  scrollbar-color: #00AF28 #000000;*/
+/*}*/
+
+/*!* Chrome, Edge and Safari *!*/
+/**::-webkit-scrollbar {*/
+/*  height: 7px;*/
+/*  width: 7px;*/
+/*}*/
+/**::-webkit-scrollbar-track {*/
+/*  border-radius: 2px;*/
+/*  background-color: transparent;*/
+/*}*/
+
+/**::-webkit-scrollbar-track:hover {*/
+/*  background-color: transparent;*/
+/*}*/
+
+/**::-webkit-scrollbar-track:active {*/
+/*  background-color: transparent;*/
+/*}*/
+
+/**::-webkit-scrollbar-thumb {*/
+/*  border-radius: 2px;*/
+/*  background-color: #0FAF84;*/
+/*}*/
+
+/**::-webkit-scrollbar-thumb:hover {*/
+/*  background-color: #0FAF84;*/
+/*}*/
+
+/**::-webkit-scrollbar-thumb:active {*/
+/*  background-color: #00D832;*/
 /*}*/

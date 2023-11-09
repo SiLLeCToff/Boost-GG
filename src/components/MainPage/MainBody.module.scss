@@ -1,23 +1,52 @@
 @import  "../../sass/variables";
 @import "../../sass/mixins";
 
-.container {
-  //@include ui-bg;
-  @apply w-full h-screen flex;
-  background-color: white;
+.background {
+  @apply -z-50 w-screen h-[100%] absolute bg-cover bg-fixed top-0 backdrop-filter
 }
+
+
+.container {
+
+
+
+  @apply w-full h-screen flex flex-col;
+  background-image: -webkit-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%);
+  background-image:  -moz-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%);
+  background-image:  -o-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%);
+  background-image:  -ms-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%);
+  background-image:  linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%);
+
+
+}
+
 
 
 .navbar {
 
   .nav {
     @include ui-bg;
-    @apply mt-[20px] fixed w-[15%] h-[300px] rounded-[20px]
+    @apply sticky w-[90%] h-[300px] rounded-[20px] top-[30px] translate-y-[50px]
   }
 
-  @apply w-[16%] flex h-full justify-center relative
+  @apply w-[16%] flex h-full justify-center items-start;
 }
 
+
 .main {
-@apply w-[70%] flex h-full
+  @apply w-[84%] flex flex-col min-h-fit justify-start items-center;
+
+   .head {
+     @apply flex w-full  items-center mt-[100px];
+
+      h1 {
+        @apply flex text-white font-bold text-[50px]
+     }
+
+   }
+}
+
+.valo {
+  @include border-glow;
+  @apply flex bg-gray-800 backdrop-blur bg-opacity-50 w-[50%] h-[400px] rounded-3xl justify-center items-center;
 }
