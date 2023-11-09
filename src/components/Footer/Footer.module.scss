@@ -1,3 +1,10 @@
+@import  "../../sass/variables";
+@import "../../sass/mixins";
 .footer {
-  @apply w-full h-[100px] bg-black;
+  background-color: $accent;
+  @apply w-full flex justify-center items-center bottom-0 h-[200px];
+
+      h1 {
+        @apply text-white font-bold text-[20px]
+      }
 }

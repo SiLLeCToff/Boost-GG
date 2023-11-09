@@ -3,7 +3,37 @@
 
 .header {
   @include header-bg;
-  @apply w-full h-[75px]  sticky top-[0px] z-[9999];
+  @apply w-full h-[75px] absolute top-[0px] z-[9999] flex justify-center;
 
+      nav {
+        @apply flex w-[95%] px-[20px] justify-between items-center;
+
+        h1 {
+          color: $accent;
+          @apply flex font-bold text-[40px] cursor-pointer;
+
+          p {
+            @apply flex text-white;
+          }
+        }
+
+        ul {
+          @apply flex justify-between w-2/3;
+
+          li {
+            @apply text-white cursor-pointer;
+          }
+        }
+
+        button {
+          background: $accent;
+
+          &:hover {
+            opacity: 0.9;
+          }
+          @apply py-[10px] px-[20px] text-white flex gap-[10px] font-bold rounded-[5px] text-[12px] ;
+        }
+
+      }
 
 }

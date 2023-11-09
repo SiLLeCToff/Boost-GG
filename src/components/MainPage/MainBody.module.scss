@@ -2,7 +2,7 @@
 @import "../../sass/mixins";
 
 .background {
-  @apply -z-50 w-screen h-[100%] absolute bg-cover bg-fixed top-0 backdrop-filter
+  @apply -z-50 w-screen absolute h-screen  bg-cover bg-fixed top-0 backdrop-filter;
 }
 
 
@@ -10,7 +10,7 @@
 
 
 
-  @apply w-full h-screen flex flex-col;
+  @apply w-full relative h-screen;
   background-image: -webkit-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%);
   background-image:  -moz-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%);
   background-image:  -o-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%);
@@ -22,31 +22,48 @@
 
 
 
-.navbar {
-
-  .nav {
-    @include ui-bg;
-    @apply sticky w-[90%] h-[300px] rounded-[20px] top-[30px] translate-y-[50px]
-  }
-
-  @apply w-[16%] flex h-full justify-center items-start;
-}
-
-
 .main {
-  @apply w-[84%] flex flex-col min-h-fit justify-start items-center;
+  @apply w-[100%]  flex flex-col h-full justify-center items-center ;
 
-   .head {
-     @apply flex w-full  items-center mt-[100px];
+     .head {
+     @apply flex flex-col w-full  items-center justify-center mt-[100px] overflow-hidden;
 
-      h1 {
-        @apply flex text-white font-bold text-[50px]
+        h1 {
+        @apply flex text-white font-bold text-[50px] drop-shadow-md;
      }
 
    }
+
 }
 
-.valo {
-  @include border-glow;
-  @apply flex bg-gray-800 backdrop-blur bg-opacity-50 w-[50%] h-[400px] rounded-3xl justify-center items-center;
+
+.block2 {
+  border-top: solid 30px;
+  border-color: $accent;
+  @apply flex bg-white w-full justify-start  flex-col py-[100px] items-center h-[2000px];
+
+          .menu {
+            background-color: $card;
+            @apply flex w-[80%] justify-center items-center gap-[20px] h-[1000px] rounded-[30px] relative flex-col py-[30px];
+
+                  h1 {
+                    color: #0b0f18;
+                    @apply flex whitespace-nowrap text-[30px] font-medium
+                  }
+
+
+                  .calculator {
+                    @apply flex w-full h-[90%] flex-col items-center justify-start;
+
+                      .rank {
+                        @apply flex w-[80%]
+                      }
+
+
+                      .other {
+                        @apply flex border border-black w-[80%];
+                      }
+                  }
+           }
+
 }
