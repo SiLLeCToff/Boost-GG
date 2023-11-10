@@ -11,11 +11,11 @@
 
 
   @apply w-full relative h-screen;
-  background-image: -webkit-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%);
-  background-image:  -moz-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%);
-  background-image:  -o-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%);
-  background-image:  -ms-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%);
-  background-image:  linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%);
+  background-image: -webkit-linear-gradient(rgba(0,0,0, 0) 0%, rgb(21, 23, 30, 1) 100%);
+  background-image:  -moz-linear-gradient(rgba(0,0,0, 0) 0%,rgba(21, 23, 30, 1) 100%);
+  background-image:  -o-linear-gradient(rgba(0,0,0, 0) 0%,rgba(21, 23, 30, 1) 100%);
+  background-image:  -ms-linear-gradient(rgba(0,0,0, 0) 0%,rgba(21, 23, 30, 1) 100%);
+  background-image:  linear-gradient(rgba(0,0,0, 0) 0%,rgba(21, 23, 30, 1) 100%);
 
 
 }
@@ -38,62 +38,61 @@
 
 
 .block2 {
-  border-top: solid 30px;
-  border-color: $accent;
-  @apply flex bg-white w-full justify-between px-[50px] py-[100px] items-center h-[2000px];
+  //border-top: solid 30px;
+  //border-color: $accent;
+  @apply flex bg-[#15171EFF] w-full justify-between px-[50px] py-[100px] items-start h-[2000px];
 
           .menu {
-            background-color: $card;
-            @apply flex w-[70%] justify-center items-center gap-[20px] h-[1000px] rounded-[30px] relative flex-col py-[30px];
+
+
+            background: linear-gradient(135deg, hsla(233, 13%, 14%, 1), hsla(233, 13%, 14%, 1) 58%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 9%, 18%, 1) 0%);
+
+            background: -moz-linear-gradient(135deg, hsla(233, 9%, 18%, 1) 0%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 13%, 14%, 1) 58%, hsla(233, 13%, 14%, 1) 100%);
+
+            background: -webkit-linear-gradient(135deg, hsla(233, 9%, 18%, 1) 0%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 13%, 14%, 1) 58%, hsla(233, 13%, 14%, 1) 100%);
+            @apply flex w-[70%] justify-center items-center gap-[20px] h-[700px] rounded-[30px] relative flex-col py-[30px];
 
                   h1 {
                     color: #0b0f18;
-                    @apply flex whitespace-nowrap text-[30px] font-bold
+                    @apply flex text-white whitespace-nowrap text-[30px] font-bold
                   }
                   h2 {
                      color: #0b0f18;
-                   @apply flex whitespace-nowrap text-[20px] font-medium
+                   @apply flex text-white whitespace-nowrap text-[20px] font-medium
                    }
 
 
             .calculator {
                     @apply flex w-full h-[90%] flex-col items-center justify-start;
-                      //.line {
-                      //  border-left: solid 3px;
-                      //  border-image: linear-gradient(180deg, #6063ea, #8759ef, #d044e5) 1 100%;
-                      //  @apply absolute -left-[25px] w-[2px] h-[165px] rounded-full;
-                      //}
 
                       .rank {
-                        @apply flex w-[100%] justify-center items-center gap-[20px];
+                        @apply flex w-[100%] justify-center items-start gap-[20px];
 
                           .ranks {
                             @apply flex flex-col w-[50%] justify-center items-center;
 
                                 h2 {
-                                  @apply flex w-[90%];
+                                  @apply flex text-white w-[90%];
                                 }
                              .mainOfRanks {
-                               //border-left: solid 3px;
-                               //border-image: linear-gradient(180deg, #6063ea, #8759ef, #d044e5) 1 100%;
                                @apply flex flex-wrap w-[90%] gap-[10px] justify-start items-center h-auto relative;
                              }
 
                              .numberRank {
-                               @apply flex w-[90%] gap-x-[10px] mt-[10px];
+                               @apply flex w-[90%] gap-x-[10px] mt-[10px] text-white;
+
                              }
+
+                            .selectMenu {
+                              @apply  flex bg-[#15171EFF] mt-[5px] pl-[5px] text-white py-[10px] w-[200px] rounded-[5px]  outline outline-[1px] outline-[#35383f] focus:outline-none focus:outline-[1px] focus:outline-[#565b64] hover:outline-[#565b64];
+                            }
                           }
-                      }
-
-
-                      .other {
-                        @apply flex w-[80%];
                       }
                   }
            }
 
           .result {
             background-color: $card;
-            @apply flex w-[28%] justify-center items-center gap-[20px] h-[1000px] rounded-[30px] relative flex-col py-[30px];
+            @apply flex w-[28%] justify-center items-center gap-[20px] h-[500px] rounded-[30px] relative flex-col py-[30px];
           }
 }
