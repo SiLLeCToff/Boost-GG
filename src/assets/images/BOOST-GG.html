@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:5173/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="./BOOST-GG_files/client"></script>
+
+    
+    <link rel="icon" type="image/svg+xml" href="http://localhost:5173/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOST-GG</title>
+  <style type="text/css" data-vite-dev-id="/Users/sillect/Desktop/valorantboost/valorant-boost/src/App.css">@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+:root {
+    margin: 0;
+    padding: 0;
+}
+body {
+
+}</style><style type="text/css" data-vite-dev-id="/Users/sillect/Desktop/valorantboost/valorant-boost/src/components/MainPage/MainBody.module.scss">._background_12ysk_1 {
+  position: absolute;
+  top: 0px;
+  z-index: -50;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-attachment: fixed;
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+._container_12ysk_5 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+}
+
+._main_12ysk_14 {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+._main_12ysk_14 ._head_12ysk_17 {
+  margin-top: 100px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+._main_12ysk_14 ._head_12ysk_17 h1 {
+  display: flex;
+  font-size: 50px;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+._block2_12ysk_24 {
+  border-top: solid 30px;
+  border-color: #7e02ff;
+  display: flex;
+  height: 2000px;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+._block2_12ysk_24 ._menu_12ysk_29 {
+  background-color: #f4f4ff;
+  position: relative;
+  display: flex;
+  height: 1000px;
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+._block2_12ysk_24 ._menu_12ysk_29 h1 {
+  color: #0b0f18;
+  display: flex;
+  white-space: nowrap;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+._block2_12ysk_24 ._menu_12ysk_29 h2 {
+  color: #0b0f18;
+  display: flex;
+  white-space: nowrap;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+._block2_12ysk_24 ._menu_12ysk_29 ._calculator_12ysk_41 {
+  display: flex;
+  height: 90%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+._block2_12ysk_24 ._menu_12ysk_29 ._calculator_12ysk_41 ._rank_12ysk_44 {
+  display: flex;
+  width: 80%;
+  padding-left: 20px;
+}
+
+._block2_12ysk_24 ._menu_12ysk_29 ._calculator_12ysk_41 ._rank_12ysk_44 ._ranks_12ysk_47 {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+._block2_12ysk_24 ._menu_12ysk_29 ._calculator_12ysk_41 ._rank_12ysk_44 ._ranks_12ysk_47 ._mainOfRanks_12ysk_50 {
+  position: relative;
+  display: flex;
+  height: auto;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+._block2_12ysk_24 ._menu_12ysk_29 ._calculator_12ysk_41 ._rank_12ysk_44 ._ranks_12ysk_47 ._numberRank_12ysk_53 {
+  margin-top: 10px;
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+
+._block2_12ysk_24 ._menu_12ysk_29 ._calculator_12ysk_41 ._other_12ysk_56 {
+  display: flex;
+  width: 80%;
+}</style><style type="text/css" data-vite-dev-id="/Users/sillect/Desktop/valorantboost/valorant-boost/src/components/Header/Header.module.scss">._header_1sgtu_1 {
+  background: rgb(24, 27, 33);
+  background: radial-gradient(circle, rgba(24, 27, 33, 0.6) 18%, rgba(0, 0, 0, 0.9) 94%);
+  position: absolute;
+  top: 0px;
+  z-index: 9999;
+  display: flex;
+  height: 75px;
+  width: 100%;
+  justify-content: center;
+}
+._header_1sgtu_1 nav {
+  display: flex;
+  width: 95%;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+._header_1sgtu_1 nav h1 {
+  color: #7e02ff;
+  display: flex;
+  cursor: pointer;
+  font-size: 40px;
+  font-weight: 700;
+}
+._header_1sgtu_1 nav h1 p {
+  display: flex;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+._header_1sgtu_1 nav ul {
+  display: flex;
+  width: 66.666667%;
+  justify-content: space-between;
+}
+._header_1sgtu_1 nav ul li {
+  cursor: pointer;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+._header_1sgtu_1 nav button {
+  background: #7e02ff;
+  display: flex;
+  gap: 10px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+._header_1sgtu_1 nav button:hover {
+  opacity: 0.9;
+}</style><style type="text/css" data-vite-dev-id="/Users/sillect/Desktop/valorantboost/valorant-boost/src/components/Footer/Footer.module.scss">._footer_jc4th_1 {
+  background-color: #7e02ff;
+  bottom: 0px;
+  display: flex;
+  height: 200px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+._footer_jc4th_1 h1 {
+  font-size: 20px;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}</style><style type="text/css" data-vite-dev-id="/Users/sillect/Desktop/valorantboost/valorant-boost/src/index.css">/*
+! tailwindcss v3.3.5 | MIT License | https://tailwindcss.com
+*//*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+*/
+
+html {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4; /* 3 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-feature-settings: normal; /* 5 */
+  font-variation-settings: normal; /* 6 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+dialog {
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+[hidden] {
+  display: none;
+}
+
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+.container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+
+  .container {
+    max-width: 1536px;
+  }
+}
+.relative {
+  position: relative;
+}
+.flex {
+  display: flex;
+}
+.h-\[15px\] {
+  height: 15px;
+}
+.h-\[200px\] {
+  height: 200px;
+}
+.h-\[70px\] {
+  height: 70px;
+}
+.h-full {
+  height: 100%;
+}
+.h-\[30px\] {
+  height: 30px;
+}
+.h-\[40px\] {
+  height: 40px;
+}
+.h-\[50px\] {
+  height: 50px;
+}
+.h-\[60px\] {
+  height: 60px;
+}
+.w-\[15px\] {
+  width: 15px;
+}
+.w-\[50\%\] {
+  width: 50%;
+}
+.w-\[70px\] {
+  width: 70px;
+}
+.w-full {
+  width: 100%;
+}
+.w-\[40px\] {
+  width: 40px;
+}
+.w-\[60px\] {
+  width: 60px;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.items-center {
+  align-items: center;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-center {
+  justify-content: center;
+}
+.gap-x-\[10px\] {
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.rounded-\[10px\] {
+  border-radius: 10px;
+}
+.border {
+  border-width: 1px;
+}
+.border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+.bg-transparent {
+  background-color: transparent;
+}
+.p-\[10px\] {
+  padding: 10px;
+}
+.text-\[16px\] {
+  font-size: 16px;
+}
+.text-\[20px\] {
+  font-size: 20px;
+}
+.text-\[40px\] {
+  font-size: 40px;
+}
+.text-\[30px\] {
+  font-size: 30px;
+}
+.font-light {
+  font-weight: 300;
+}
+.font-normal {
+  font-weight: 400;
+}
+.text-red-800 {
+  --tw-text-opacity: 1;
+  color: rgb(153 27 27 / var(--tw-text-opacity));
+}
+.invert {
+  --tw-invert: invert(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+:root {
+  font-family: 'Ubuntu', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /*color-scheme: light dark;*/
+  /*color: rgba(255, 255, 255, 0.87);*/
+  /*background-color: #242424;*/
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+body {
+  background-color: black;
+margin: 0;
+  padding: 0;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+
+/*@media (prefers-color-scheme: light) {*/
+/*  :root {*/
+/*    color: #213547;*/
+/*    background-color: #ffffff;*/
+/*  }*/
+/*  a:hover {*/
+/*    color: #747bff;*/
+/*  }*/
+/*  button {*/
+/*    background-color: #f9f9f9;*/
+/*  }*/
+/*}*/
+
+/*!* Firefox *!*/
+/** {*/
+/*  scrollbar-width: thin;*/
+/*  scrollbar-color: #00AF28 #000000;*/
+/*}*/
+
+/*!* Chrome, Edge and Safari *!*/
+/**::-webkit-scrollbar {*/
+/*  height: 7px;*/
+/*  width: 7px;*/
+/*}*/
+/**::-webkit-scrollbar-track {*/
+/*  border-radius: 2px;*/
+/*  background-color: transparent;*/
+/*}*/
+
+/**::-webkit-scrollbar-track:hover {*/
+/*  background-color: transparent;*/
+/*}*/
+
+/**::-webkit-scrollbar-track:active {*/
+/*  background-color: transparent;*/
+/*}*/
+
+/**::-webkit-scrollbar-thumb {*/
+/*  border-radius: 2px;*/
+/*  background-color: #0FAF84;*/
+/*}*/
+
+/**::-webkit-scrollbar-thumb:hover {*/
+/*  background-color: #0FAF84;*/
+/*}*/
+
+/**::-webkit-scrollbar-thumb:active {*/
+/*  background-color: #00D832;*/
+/*}*/
+</style></head>
+  <body>
+    <div id="root"><div class="_container_12ysk_5"><img src="./BOOST-GG_files/bgzip.jpg" class="_background_12ysk_1" alt="background"><div class="_header_1sgtu_1"><nav><h1>BOOST<p>.GG</p></h1><ul><li>Бустинг</li><li></li><li>2</li><li>2</li><li>2</li></ul><button><img src="./BOOST-GG_files/profile2.svg" class="flex w-[15px] h-[15px] bg-transparent invert" alt="profile">Sillect</button></nav></div><div class="flex w-full h-full"><div class="_main_12ysk_14"><div class="_head_12ysk_17"><h1>VALORANT Boosting Service</h1><h1>Reach the rank you dreamed</h1></div></div></div></div><div class="_block2_12ysk_24"><div class="_menu_12ysk_29"><h1>Расчитайте Стоимость Бустинга</h1><div class="_calculator_12ysk_41"><div class="_rank_12ysk_44"><div class="_ranks_12ysk_47"><h2><p>1.</p>Текущий Ранг</h2><div class="_mainOfRanks_12ysk_50"><div class="flex bg-gray-200 border-gray-300 border rounded-[10px] p-[10px] w-[60px] h-[60px]"><img src="./BOOST-GG_files/Iron.png" alt="rank"></div><div class="flex bg-gray-200 border-gray-300 border rounded-[10px] p-[10px] w-[60px] h-[60px]"><img src="./BOOST-GG_files/Bronze.png" alt="rank"></div><div class="flex bg-gray-200 border-gray-300 border rounded-[10px] p-[10px] w-[60px] h-[60px]"><img src="./BOOST-GG_files/Silver.png" alt="rank"></div><div class="flex bg-gray-200 border-gray-300 border rounded-[10px] p-[10px] w-[60px] h-[60px]"><img src="./BOOST-GG_files/Gold.png" alt="rank"></div><div class="flex bg-gray-200 border-gray-300 border rounded-[10px] p-[10px] w-[60px] h-[60px]"><img src="./BOOST-GG_files/Platinum.png" alt="rank"></div><div class="flex bg-gray-200 border-gray-300 border rounded-[10px] p-[10px] w-[60px] h-[60px]"><img src="./BOOST-GG_files/Diamond.png" alt="rank"></div><div class="flex bg-gray-200 border-gray-300 border rounded-[10px] p-[10px] w-[60px] h-[60px]"><img src="./BOOST-GG_files/Ascendant.png" alt="rank"></div><div class="flex bg-gray-200 border-gray-300 border rounded-[10px] p-[10px] w-[60px] h-[60px]"><img src="./BOOST-GG_files/Immortal.png" alt="rank"></div><div class="flex bg-gray-200 border-gray-300 border rounded-[10px] p-[10px] w-[60px] h-[60px]"><img src="./BOOST-GG_files/Radiant.png" alt="rank"></div></div><div class="_numberRank_12ysk_53"><div class="flex justify-center items-center text-[20px] font-normal bg-gray-200 border-gray-300 border rounded-[10px] p-[10px] w-[60px] h-[40px] ">I</div><div class="flex justify-center items-center text-[20px] font-normal bg-gray-200 border-gray-300 border rounded-[10px] p-[10px] w-[60px] h-[40px] ">II</div><div class="flex justify-center items-center text-[20px] font-normal bg-gray-200 border-gray-300 border rounded-[10px] p-[10px] w-[60px] h-[40px] ">III</div></div></div><div class="_ranks_12ysk_47"><h2><p>2.</p>Желаемый Ранг</h2><div class="_mainOfRanks_12ysk_50"><div class="flex bg-gray-200 border-gray-300 border rounded-[10px] p-[10px]  w-[60px] h-[60px]"><img src="./BOOST-GG_files/Iron.png" alt="rank"></div><div class="flex bg-gray-200 border-gray-300 border rounded-[10px] p-[10px]  w-[60px] h-[60px]"><img src="./BOOST-GG_files/Bronze.png" alt="rank"></div><div class="flex bg-gray-200 border-gray-300 border rounded-[10px] p-[10px]  w-[60px] h-[60px]"><img src="./BOOST-GG_files/Silver.png" alt="rank"></div><div class="flex bg-gray-200 border-gray-300 border rounded-[10px] p-[10px]  w-[60px] h-[60px]"><img src="./BOOST-GG_files/Gold.png" alt="rank"></div><div class="flex bg-gray-200 border-gray-300 border rounded-[10px] p-[10px]  w-[60px] h-[60px]"><img src="./BOOST-GG_files/Platinum.png" alt="rank"></div><div class="flex bg-gray-200 border-gray-300 border rounded-[10px] p-[10px]  w-[60px] h-[60px]"><img src="./BOOST-GG_files/Diamond.png" alt="rank"></div><div class="flex bg-gray-200 border-gray-300 border rounded-[10px] p-[10px]  w-[60px] h-[60px]"><img src="./BOOST-GG_files/Ascendant.png" alt="rank"></div><div class="flex bg-gray-200 border-gray-300 border rounded-[10px] p-[10px]  w-[60px] h-[60px]"><img src="./BOOST-GG_files/Immortal.png" alt="rank"></div><div class="flex bg-gray-200 border-gray-300 border rounded-[10px] p-[10px]  w-[60px] h-[60px]"><img src="./BOOST-GG_files/Radiant.png" alt="rank"></div></div><div class="_numberRank_12ysk_53"><div class="flex justify-center items-center text-[20px] font-normal bg-gray-200 border-gray-300 border rounded-[10px] p-[10px] w-[60px] h-[40px] ">I</div><div class="flex justify-center items-center text-[20px] font-normal bg-gray-200 border-gray-300 border rounded-[10px] p-[10px] w-[60px] h-[40px] ">II</div><div class="flex justify-center items-center text-[20px] font-normal bg-gray-200 border-gray-300 border rounded-[10px] p-[10px] w-[60px] h-[40px] ">III</div></div></div></div><div class="_other_12ysk_56">2block</div></div></div><div></div></div><div class="_footer_jc4th_1"><h1 class="text-red-800">Footer</h1></div></div>
+    <script type="module" src="./BOOST-GG_files/main.tsx"></script>
+  
+
+</body></html>
