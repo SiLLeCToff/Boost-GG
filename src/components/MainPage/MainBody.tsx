@@ -3,13 +3,17 @@ import styles from "./MainBody.module.scss"
 import Header from "../Header/Header.tsx";
 import Footer from "../Footer/Footer.tsx";
 import SelectMenu from "../UI/SelectMenu/SelectMenu.tsx";
+import ToggleSwitch from "../UI/ToggleSwitch/ToggleSwitch.tsx";
+import {calculateTotalPrice} from "./Calculator/calculateTotalPrice.tsx";
 
 const MainBody = () => {
-    const [currentRank, setCurrentRank] = useState(0)
-    const [currentNumOfRank, setCurrentNumOfRank] = useState(0)
-    const [desireRank, setDesireRank] = useState(0)
-    const [desireNumOfRank, setDesireNumOfRank] = useState(0)
-    // const [sum, setSum] = useState(0)
+    const [currentRank, setCurrentRank] = useState(1)
+    const [currentNumOfRank, setCurrentNumOfRank] = useState(1)
+    const [desireRank, setDesireRank] = useState(2)
+    const [desireNumOfRank, setDesireNumOfRank] = useState(1)
+    const [percents, setPercents] = useState(0)
+
+    console.log(percents)
 
    const ranks: {name: string, id: number, img: string, prices: object}[] = [
         {name: "Железо", id: 1, img: "Iron.png", prices: { 1: 5, 2: 5, 3: 5 }},
@@ -21,6 +25,12 @@ const MainBody = () => {
        {name: "Расцвет", id: 7, img: "Ascendant.png", prices: { 1: 75, 2: 78, 3: 78 }},
        {name: "Бессмертный", id: 8, img: "Immortal.png", prices: { 1: 60, 2: 65, 3: 70 }},
        {name: "Радиант", id: 9, img: "Radiant.png", prices: { 1: 500, 2: 500, 3: 500 }},
+    ]
+
+    const switches: {id: number, name: string, percent: number}[] = [
+        {id: 1, name: "Трансляция", percent: 15},
+        {id: 2, name: "Игра с Бустером", percent: 40},
+        {id: 3, name: "Solo Play", percent: 40},
     ]
 
     const numsOfRank: {name: string, id: number}[] = [
@@ -43,58 +53,18 @@ const MainBody = () => {
         {label: "Asia", value: "Asia"},
     ]
 
-
-    const calculateTotalPrice = useMemo(() => {
-        const currentRankObject = ranks.find((rank) => rank.id === currentRank);
-        const desireRankObject = ranks.find((rank) => rank.id === desireRank);
-
-        if (currentRankObject && desireRankObject) {
-            const currentPrices = currentRankObject.prices;
-            const desirePrices = desireRankObject.prices;
-
-            const currentNum = currentNumOfRank;
-            const desireNum = desireNumOfRank;
-
-            // Если текущий ранг и номер текущего ранга меньше или равны желаемому рангу и его номеру, возвращаем 0
-            if (
-                (desireRank < currentRank) ||
-                (currentRank === desireRank && desireNum <= currentNum)
-            ) {
-                return 0;
-            }
-
-            let totalPrice = 0;
-
-            // Если текущий ранг и желаемый ранг совпадают, считаем только для одного ранга
-            if (currentRank === desireRank) {
-                for (let i = currentNum; i <= desireNum; i++) {
-                    totalPrice += (currentPrices as Record<number, number>)[i];
-                }
-            } else {
-                // Если ранги не совпадают, считаем от текущего ранга до максимального уровня и от минимального уровня желаемого ранга
-                for (let i = currentNum; i <= Object.keys(currentPrices).length; i++) {
-                    totalPrice += (currentPrices as Record<number, number>)[i];
-                }
-
-                for (let j = currentRank + 1; j < desireRank; j++) {
-                    const intermediateRankObject = ranks.find((rank) => rank.id === j);
-                    if (intermediateRankObject) {
-                        for (let i = 1; i <= Object.keys(intermediateRankObject.prices).length; i++) {
-                            totalPrice += (intermediateRankObject.prices as Record<number, number>)[i];
-                        }
-                    }
-                }
-
-                for (let i = 1; i <= desireNum; i++) {
-                    totalPrice += (desirePrices as Record<number, number>)[i];
-                }
-            }
-
-            return totalPrice;
+    const calculatedPrice = useMemo(() => {
+        return calculateTotalPrice({
+            currentRank,
+            desireRank,
+            currentNumOfRank,
+            desireNumOfRank,
+            ranks,
         }
+        );
 
-        return 0;
     }, [currentRank, desireRank, currentNumOfRank, desireNumOfRank, ranks]);
+
    const HandleCurrentRank = (rankId: number) => {
         setCurrentRank(rankId)
     }
@@ -123,6 +93,15 @@ const MainBody = () => {
         console.log(selectedValue)
    }
 
+
+
+    const handleCheck = (value: number, isChecked: boolean) => {
+        if (isChecked) {
+            setPercents(percents + value);
+        } else {
+            setPercents(percents - value);
+        }
+    };
     return (
         <>
         <div className={styles.container}>
@@ -139,7 +118,7 @@ const MainBody = () => {
         </div>
             <div className={styles.block2}>
                 <div className={styles.menu}>
-                    <h1>Расчитайте Стоимость Бустинга</h1>
+                    {/*<h1>Расчитайте Стоимость Бустинга</h1>*/}
                     <div className={styles.calculator}>
                         <div className={styles.rank}>
                             <div className={styles.ranks}>
@@ -197,17 +176,10 @@ const MainBody = () => {
                     <div>
 
                     </div>
-                    <div className="flex gap-x-[5px] w-full font-light text-white justify-between items-center">
-                        <div className="flex gap-x-[10px]">
-                        <h2 className="flex">Трансляция</h2>
-                            <p>+10%</p>
-                        </div>
-                            <label className={styles.switch}>
-                                <input type="checkbox"/>
-                                <span className={styles.slider}></span>
-                            </label>
-                    </div>
-                    <h1 className="text-white text-[50px]">Итог: {calculateTotalPrice}$</h1>
+                    {switches.map((item) => (
+                        <ToggleSwitch key={item.id} name={item.name} value={item.percent}  onCheck={handleCheck}/>
+                        ))}
+                    <h1 className="text-white text-[30px] whitespace-nowrap">Итог: {percents === 0 ? calculatedPrice : calculatedPrice + calculatedPrice*percents/100}$</h1>
                 </div>
             </div>
             <Footer/>
