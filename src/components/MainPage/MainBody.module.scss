@@ -43,22 +43,16 @@
   @apply flex bg-[#15171EFF] w-full justify-between px-[50px] py-[100px] items-start h-[2000px];
 
           .menu {
-
-
-            background: linear-gradient(135deg, hsla(233, 13%, 14%, 1), hsla(233, 13%, 14%, 1) 58%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 9%, 18%, 1) 0%);
-
-            background: -moz-linear-gradient(135deg, hsla(233, 9%, 18%, 1) 0%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 13%, 14%, 1) 58%, hsla(233, 13%, 14%, 1) 100%);
-
-            background: -webkit-linear-gradient(135deg, hsla(233, 9%, 18%, 1) 0%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 13%, 14%, 1) 58%, hsla(233, 13%, 14%, 1) 100%);
-            @apply flex w-[70%] justify-center items-center gap-[20px] h-[700px] rounded-[30px] relative flex-col py-[30px];
+            @include ui-bg;
+            @apply flex w-[70%] justify-center items-center gap-[20px] h-auto rounded-[30px] relative flex-col py-[50px];
 
                   h1 {
                     color: #0b0f18;
-                    @apply flex text-white whitespace-nowrap text-[30px] font-bold
+                    @apply flex text-white whitespace-nowrap text-[25px] font-medium
                   }
                   h2 {
                      color: #0b0f18;
-                   @apply flex text-white whitespace-nowrap text-[20px] font-medium
+                   @apply flex text-white whitespace-nowrap text-[20px] font-light;
                    }
 
 
@@ -92,7 +86,56 @@
            }
 
           .result {
-            background-color: $card;
-            @apply flex w-[28%] justify-center items-center gap-[20px] h-[500px] rounded-[30px] relative flex-col py-[30px];
+            @include ui-bg;
+            @apply flex w-[28%] justify-center px-[30px] items-start gap-[20px] h-[500px] rounded-[30px] relative flex-col py-[30px];
+
+            .switch {
+              font-size: 10px;
+              position: relative;
+              display: inline-block;
+              width: 3.5em;
+              height: 2em;
+            }
+
+            /* Hide default HTML checkbox */
+            .switch input {
+              opacity: 0;
+              width: 0;
+              height: 0;
+            }
+
+            /* The slider */
+            .slider {
+              top: 0;
+              left: 0;
+              position: absolute;
+              cursor: pointer;
+              inset: 0;
+              border: 2px solid #414141;
+              border-radius: 50px;
+              transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+
+            .slider:before {
+              position: absolute;
+              content: "";
+              height: 1.4em;
+              width: 1.4em;
+              left: 0.1em;
+              bottom:0.1em;
+              background-color: white;
+              border-radius: inherit;
+              transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            }
+
+            .switch input:checked + .slider {
+              box-shadow: 0 0 20px rgb(126, 2, 255, 0.8);
+              border: 2px solid #7e02ff;
+            }
+
+            .switch input:checked + .slider:before {
+              transform: translateX(1.5em);
+            }
           }
+
 }

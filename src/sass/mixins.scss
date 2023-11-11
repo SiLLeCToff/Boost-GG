@@ -1,7 +1,4 @@
-@mixin ui-bg {
-  background: rgb(24,27,33);
-  background: radial-gradient(circle, rgba(24,27,33,0.9) 18%, rgba(0, 0, 0, 0.9) 94%);
-}
+
 
 @mixin header-bg {
   background: rgb(24,27,33);
@@ -19,11 +16,19 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Цвет затемнения и уровень прозрачности */
+    background-color: rgba(0, 0, 0, 0.6);
   }
 }
 
 @mixin border-glow {
   border-color: rgba(59, 204, 28, 0.6);
   box-shadow: 0 0 3px 0px rgba(59, 204, 28, 0.32);
+}
+
+@mixin ui-bg {
+  background: linear-gradient(135deg, hsla(233, 13%, 14%, 1), hsla(233, 13%, 14%, 1) 58%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 9%, 18%, 1) 0%);
+
+  background: -moz-linear-gradient(135deg, hsla(233, 9%, 18%, 1) 0%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 13%, 14%, 1) 58%, hsla(233, 13%, 14%, 1) 100%);
+
+  background: -webkit-linear-gradient(135deg, hsla(233, 9%, 18%, 1) 0%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 13%, 14%, 1) 58%, hsla(233, 13%, 14%, 1) 100%);
 }

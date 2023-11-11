@@ -19,7 +19,7 @@ const Header = () => {
                     <li>2</li>
                     <li>2</li>
                 </ul>
-                {!isAuth ? <button onClick={()=> navigate("/profile")}><img src="src/assets/icons/profile2.svg" className="flex w-[15px] h-[15px] bg-transparent invert" alt="profile"/>{username}</button> : <button>Войти</button> }
+                {!isAuth ? <button onClick={()=> navigate("/profile")}><img src="src/assets/icons/profile2.svg" className="flex w-[15px] h-[15px] bg-transparent invert" alt="profile" draggable="false"/>{username}</button> : <button>Войти</button> }
             </nav>
         </div>
     );
