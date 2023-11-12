@@ -12,8 +12,8 @@ const ToggleSwitch= ({name, onCheck, value} : {name: string, onCheck:(e: number,
     return (
         <div className="flex gap-x-[5px] w-full font-light text-white justify-between items-center">
             <div className="flex gap-x-[10px]">
-                <h2 className="flex">{name}</h2>
-                <p className="bg-gradient-to-br to-purple-500 from-blue-700 rounded py-px px-[5px] bg-opacity-40">{`+ ${value}%`}</p>
+                <h2 className="flex whitespace-nowrap">{name}</h2>
+                <p className="bg-gradient-to-br to-purple-500 whitespace-nowrap from-blue-700 rounded py-px px-[5px] bg-opacity-40">{`+ ${value}%`}</p>
             </div>
             <label className={styles.switch}>
                 <input type="checkbox" checked={isChecked} onChange={handleToggle} value={value}/>

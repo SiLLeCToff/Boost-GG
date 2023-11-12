@@ -13,8 +13,6 @@ const MainBody = () => {
     const [desireNumOfRank, setDesireNumOfRank] = useState(1)
     const [percents, setPercents] = useState(0)
 
-    console.log(percents)
-
    const ranks: {name: string, id: number, img: string, prices: object}[] = [
         {name: "Железо", id: 1, img: "Iron.png", prices: { 1: 5, 2: 5, 3: 5 }},
        {name: "Бронза", id: 2, img: "Bronze.png", prices: { 1: 6, 2: 7, 3: 8 }},
