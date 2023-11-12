@@ -7,22 +7,33 @@ import ToggleSwitch from "../UI/ToggleSwitch/ToggleSwitch.tsx";
 import {calculateTotalPrice} from "./Calculator/calculateTotalPrice.tsx";
 
 const MainBody = () => {
-    const [currentRank, setCurrentRank] = useState(1)
+    const [currentRank, setCurrentRank] = useState(2)
     const [currentNumOfRank, setCurrentNumOfRank] = useState(1)
-    const [desireRank, setDesireRank] = useState(2)
-    const [desireNumOfRank, setDesireNumOfRank] = useState(1)
+    const [desireRank, setDesireRank] = useState(6)
+    const [desireNumOfRank, setDesireNumOfRank] = useState(3)
     const [percents, setPercents] = useState(0)
+    const [currentColor, setCurrentColor] = useState("hsl(40,79%,20%)")
+    const [desireColor, setDesireColor] = useState("hsl(266,80%,68%)")
 
-   const ranks: {name: string, id: number, img: string, prices: object}[] = [
-        {name: "Железо", id: 1, img: "Iron.png", prices: { 1: 5, 2: 5, 3: 5 }},
-       {name: "Бронза", id: 2, img: "Bronze.png", prices: { 1: 6, 2: 7, 3: 8 }},
-       {name: "Серебро", id: 3, img: "Silver.png", prices: { 1: 15, 2: 16, 3: 17 }},
-       {name: "Золото", id: 4, img: "Gold.png", prices: { 1: 30, 2: 31, 3: 34 }},
-       {name: "Платина", id: 5, img: "Platinum.png", prices: { 1: 45, 2: 46, 3: 47 }},
-       {name: "Алмаз", id: 6, img: "Diamond.png", prices: { 1: 60, 2: 65, 3: 68 }},
-       {name: "Расцвет", id: 7, img: "Ascendant.png", prices: { 1: 75, 2: 78, 3: 78 }},
-       {name: "Бессмертный", id: 8, img: "Immortal.png", prices: { 1: 60, 2: 65, 3: 70 }},
-       {name: "Радиант", id: 9, img: "Radiant.png", prices: { 1: 500, 2: 500, 3: 500 }},
+    const colorObject = {
+        currentColor: currentColor,
+        desireColor: desireColor,
+    };
+
+// Передача цвета в CSS
+    document.documentElement.style.setProperty('--color-current', colorObject.currentColor);
+    document.documentElement.style.setProperty('--color-desire', colorObject.desireColor);
+
+   const ranks: {name: string, id: number, img: string, prices: object, color: string}[] = [
+        {name: "Железо", id: 1, img: "Iron.png", prices: { 1: 5, 2: 5, 3: 5 }, color: "hsl(210, 2%, 49%)"},
+       {name: "Бронза", id: 2, img: "Bronze.png", prices: { 1: 6, 2: 7, 3: 8 }, color: "hsl(39,70%,42%)"},
+       {name: "Серебро", id: 3, img: "Silver.png", prices: { 1: 15, 2: 16, 3: 17 }, color: "hsl(205,8%,72%)"},
+       {name: "Золото", id: 4, img: "Gold.png", prices: { 1: 30, 2: 31, 3: 34 }, color: "hsl(48,77%,61%)"},
+       {name: "Платина", id: 5, img: "Platinum.png", prices: { 1: 45, 2: 46, 3: 47 }, color: "hsl(189,53%,38%)"},
+       {name: "Алмаз", id: 6, img: "Diamond.png", prices: { 1: 60, 2: 65, 3: 68 }, color: "hsl(266,80%,68%)"},
+       {name: "Расцвет", id: 7, img: "Ascendant.png", prices: { 1: 75, 2: 78, 3: 78 }, color: "hsl(146,52%,31%)"},
+       {name: "Бессмертный", id: 8, img: "Immortal.png", prices: { 1: 60, 2: 65, 3: 70 }, color: "hsl(339,71%,32%)"},
+       {name: "Радиант", id: 9, img: "Radiant.png", prices: { 1: 500, 2: 500, 3: 500 }, color: "hsl(36,60%,42%)"},
     ]
 
     const switches: {id: number, name: string, percent: number}[] = [
@@ -63,16 +74,18 @@ const MainBody = () => {
 
     }, [currentRank, desireRank, currentNumOfRank, desireNumOfRank, ranks]);
 
-   const HandleCurrentRank = (rankId: number) => {
+   const HandleCurrentRank = (rankId: number, color: string) => {
         setCurrentRank(rankId)
+       setCurrentColor(color)
     }
 
     const HandeNumOfCurrentRank = (numId: number) => {
         setCurrentNumOfRank(numId)
     }
 
-    const HandeDesireRank = (rankId: number) => {
+    const HandeDesireRank = (rankId: number,color: string) => {
         setDesireRank(rankId)
+        setDesireColor(color)
     }
 
     const HandeNumOfDesireRank = (numId: number) => {
@@ -103,7 +116,7 @@ const MainBody = () => {
     return (
         <>
         <div className={styles.container}>
-            <img src="src/assets/images/bgzip.jpg" className={styles.background} alt="background"/>
+            <img src="src/assets/images/bg.png" className={styles.background} alt="background"/>
             <Header/>
             <div className="flex w-full h-full">
             <div className={styles.main}>
@@ -116,14 +129,13 @@ const MainBody = () => {
         </div>
             <div className={styles.block2}>
                 <div className={styles.menu}>
-                    {/*<h1>Расчитайте Стоимость Бустинга</h1>*/}
                     <div className={styles.calculator}>
                         <div className={styles.rank}>
-                            <div className={styles.ranks}>
+                            <div className={styles.currentRank}>
                                 <h2><p>1.</p>Текущий Ранг</h2>
                                 <div className={styles.mainOfRanks}>
                                     {ranks.map((rank) => (
-                                        <div key={rank.id} onClick={() =>HandleCurrentRank(rank.id)} className={`${currentRank === rank.id ? "bg-[#35383f]": "bg-[#24272c]"} flex border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[60px] cursor-pointer`}>
+                                        <div key={rank.id} onClick={() =>HandleCurrentRank(rank.id, rank.color)} className={`${currentRank === rank.id ? "bg-[#35383f]" : "bg-[#24272c]"} flex border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[60px] cursor-pointer`}>
                                             <img src={`/src/assets/images/rank_png/${rank.img}`} alt="rank" draggable="false"/>
                                         </div>
                                     ))}
@@ -145,11 +157,11 @@ const MainBody = () => {
                                     </label>
                                 </div>
                             </div>
-                            <div className={styles.ranks}>
+                            <div className={styles.desireRank}>
                                 <h2><p>2.</p>Желаемый Ранг</h2>
                                 <div className={styles.mainOfRanks}>
                                     {ranks.map((rank) => (
-                                        <div key={rank.id} onClick={() =>HandeDesireRank(rank.id)} className={`${desireRank === rank.id ? "bg-[#35383f]": "bg-[#24272c]"}  flex border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[60px] cursor-pointer`}>
+                                        <div key={rank.id} onClick={() =>HandeDesireRank(rank.id, rank.color)} className={`${desireRank === rank.id ? "bg-[#35383f]": "bg-[#24272c]"}  flex border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[60px] cursor-pointer`}>
                                             <img src={`/src/assets/images/rank_png/${rank.img}`} alt="rank" draggable="false" />
                                         </div>
                                     ))}

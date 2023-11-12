@@ -26,9 +26,25 @@
 }
 
 @mixin ui-bg {
-  background: linear-gradient(135deg, hsla(233, 13%, 14%, 1), hsla(233, 13%, 14%, 1) 58%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 9%, 18%, 1) 0%);
+  background: linear-gradient(135deg, hsla(233, 13%, 14%, 1), var(--color-current) 100%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 9%, 18%, 1) 0%);
 
-  background: -moz-linear-gradient(135deg, hsla(233, 9%, 18%, 1) 0%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 13%, 14%, 1) 58%, hsla(233, 13%, 14%, 1) 100%);
+  background: -moz-linear-gradient(135deg, hsla(233, 9%, 18%, 1) 0%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 13%, 14%, 1) 58%, var(--color-current) 400%);
 
-  background: -webkit-linear-gradient(135deg, hsla(233, 9%, 18%, 1) 0%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 13%, 14%, 1) 58%, hsla(233, 13%, 14%, 1) 100%);
+  background: -webkit-linear-gradient(135deg, hsla(233, 9%, 18%, 1) 0%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 13%, 14%, 1) 58%, var(--color-current) 400%);
+}
+
+@mixin current-ui {
+  background: linear-gradient(135deg, hsla(233, 13%, 14%, 1), var(--color-current) 100%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 9%, 18%, 1) 0%);
+
+  background: -moz-linear-gradient(135deg, hsla(233, 9%, 18%, 1) 0%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 13%, 14%, 1) 58%, var(--color-current) 400%);
+
+  background: -webkit-linear-gradient(135deg, hsla(233, 9%, 18%, 1) 0%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 13%, 14%, 1) 58%, var(--color-current) 400%);
+}
+
+@mixin desire-ui {
+  background: linear-gradient(135deg, hsla(233, 13%, 14%, 1), var(--color-desire) 100%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 9%, 18%, 1) 0%);
+
+  background: -moz-linear-gradient(135deg, hsla(233, 9%, 18%, 1) 0%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 13%, 14%, 1) 58%, var(--color-desire) 400%);
+
+  background: -webkit-linear-gradient(135deg, hsla(233, 9%, 18%, 1) 0%, hsla(229, 13%, 17%, 1) 19%, hsla(233, 13%, 14%, 1) 58%, var(--color-desire) 400%);
 }

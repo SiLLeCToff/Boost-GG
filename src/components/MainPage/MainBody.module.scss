@@ -2,7 +2,7 @@
 @import "../../sass/mixins";
 
 .background {
-  @apply -z-50 w-screen absolute h-screen  bg-cover bg-fixed top-0 backdrop-filter;
+  @apply -z-50 w-screen absolute bg-cover bg-fixed top-0 backdrop-filter;
 }
 
 
@@ -10,7 +10,7 @@
 
 
 
-  @apply w-full relative h-screen;
+  @apply w-full xl:h-[75vh] md:h-[43vh] sm:h-[30vh] max-sm:h-[34vh];
   background-image: -webkit-linear-gradient(rgba(0,0,0, 0) 0%, rgb(21, 23, 30, 1) 100%);
   background-image:  -moz-linear-gradient(rgba(0,0,0, 0) 0%,rgba(21, 23, 30, 1) 100%);
   background-image:  -o-linear-gradient(rgba(0,0,0, 0) 0%,rgba(21, 23, 30, 1) 100%);
@@ -62,8 +62,8 @@
                       .rank {
                         @apply flex w-[100%] h-full max-xl:flex-col justify-center items-start gap-[20px];
 
-                          .ranks {
-                            @include ui-bg;
+                          .currentRank {
+                            @include current-ui;
                             @apply flex flex-col gap-y-[20px] rounded-[30px] py-[50px] w-[50%] max-xl:w-[100%] justify-center items-center;
 
                                 h2 {
@@ -82,13 +82,34 @@
                               @apply  flex bg-[#15171EFF] mt-[5px] pl-[5px] text-white py-[10px] w-[150px] rounded-[5px]  outline outline-[1px] outline-[#35383f] focus:outline-none focus:outline-[1px] focus:outline-[#565b64] hover:outline-[#565b64];
                             }
                           }
+
+                        .desireRank {
+                          @include desire-ui;
+                          @apply flex flex-col gap-y-[20px] rounded-[30px] py-[50px] w-[50%] max-xl:w-[100%] justify-center items-center;
+
+                          h2 {
+                            @apply flex text-white w-[90%];
+                          }
+                          .mainOfRanks {
+                            @apply flex flex-wrap w-[90%] gap-[10px] justify-start items-center h-auto relative;
+                          }
+
+                          .numberRank {
+                            @apply flex w-[90%] gap-x-[10px] mt-[10px] text-white;
+
+                          }
+
+                          .selectMenu {
+                            @apply  flex bg-[#15171EFF] mt-[5px] pl-[5px] text-white py-[10px] w-[150px] rounded-[5px]  outline outline-[1px] outline-[#35383f] focus:outline-none focus:outline-[1px] focus:outline-[#565b64] hover:outline-[#565b64];
+                          }
+                        }
                       }
                   }
            }
 
           .result {
-            @include ui-bg;
-            @apply flex max-xl:w-[38%] w-[28%] justify-center px-[30px] items-start gap-[20px] h-[500px] rounded-[30px] relative flex-col py-[30px];
+            //@include ui-bg;
+            @apply  flex max-xl:w-[38%] w-[28%] justify-center px-[30px] items-start gap-[20px] h-[500px] rounded-[30px] relative flex-col py-[30px] bg-gradient-to-br from-[#1F2028FF] via-[#1F2028FF] via-[#262831FF] to-[#2A2B32FF];
 
 
             .switch {
