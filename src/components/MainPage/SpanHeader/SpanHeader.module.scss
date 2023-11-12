@@ -1,0 +1,101 @@
+.card {
+  margin-top: 200px;
+  width: 1000px;
+  height: 500px;
+  position: relative;
+  display: grid;
+  place-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+h1 {
+  color: white;
+}
+
+.content {
+  transition: all 0.5s ease-in-out;
+}
+
+.content .logo {
+  height: 90px;
+  flex-direction: column;
+  position: relative;
+  display: flex;
+  width: 300px;
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+}
+
+.content .logo .logo1 {
+  display: flex;
+  height: 200px;
+  position: absolute;
+  left: 0;
+}
+
+.content .logo .logo2 {
+  white-space: nowrap;
+  display: flex;
+  height: 33px;
+  position: absolute;
+  left: 300px;
+}
+
+.content .logo .trail {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+
+
+
+.card .logo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  background: linear-gradient(90deg, rgba(189, 159, 103, 0) 90%, rgb(78, 146, 146) 100%);
+  transition: opacity 1s ease-in-out;
+  animation: trail 1s ease-in-out forwards;
+  animation-delay: 0.2s;
+}
+
+.card .logo {
+  width: 300px; /* начальная ширина */
+  transition: width 1s ease-in-out;
+  animation: initialSize 1s ease-in-out forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes initialSize {
+  to {
+    animation-delay: 1s;
+    transition: opacity 1s ease-in-out;
+    width: 700px; /* конечная ширина */
+  }
+}
+
+@keyframes trail {
+  0% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  95% {
+    opacity: 0;
+  }
+}

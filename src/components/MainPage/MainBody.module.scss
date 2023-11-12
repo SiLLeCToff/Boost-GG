@@ -2,12 +2,11 @@
 @import "../../sass/mixins";
 
 .background {
-  @apply -z-50 w-screen absolute bg-cover bg-fixed top-0 backdrop-filter;
+  @apply -z-50 absolute w-screen bg-cover bg-fixed  backdrop-filter;
 }
 
 
 .container {
-
 
 
   @apply w-full xl:h-[75vh] md:h-[43vh] sm:h-[30vh] max-sm:h-[34vh];
@@ -23,10 +22,10 @@
 
 
 .main {
-  @apply w-[100%]  flex flex-col h-full justify-center items-center ;
+  @apply w-[100%] flex flex-col h-full justify-center items-center ;
 
      .head {
-     @apply flex flex-col w-full  items-center justify-center mt-[100px] overflow-hidden;
+     @apply flex flex-col w-full  items-center justify-center mt-[100px];
 
         h1 {
         @apply flex text-white font-bold text-[50px] drop-shadow-md;
@@ -40,11 +39,11 @@
 .block2 {
   //border-top: solid 30px;
   //border-color: $accent;
-  @apply flex bg-[#15171EFF] w-full justify-between px-[50px] py-[200px] items-start h-[2000px];
+  @apply flex bg-[#15171EFF] flex-col w-full justify-start px-[50px] py-[200px] items-start h-[2000px];
 
           .menu {
             //@include ui-bg;
-            @apply flex w-[70%] max-xl:w-[60%] justify-start items-center gap-[20px] h-auto relative flex-col;
+            @apply flex w-[70%] max-xl:w-[60%] justify-start items-center gap-[20px] h-auto flex-col;
 
                   h1 {
                     color: #0b0f18;

@@ -5,6 +5,9 @@ import Footer from "../Footer/Footer.tsx";
 import SelectMenu from "../UI/SelectMenu/SelectMenu.tsx";
 import ToggleSwitch from "../UI/ToggleSwitch/ToggleSwitch.tsx";
 import {calculateTotalPrice} from "./Calculator/calculateTotalPrice.tsx";
+import SpanHeader from "./SpanHeader/SpanHeader.tsx";
+import WhyWe from "./WhyWe/WhyWe.tsx";
+
 
 const MainBody = () => {
     const [currentRank, setCurrentRank] = useState(2)
@@ -121,76 +124,79 @@ const MainBody = () => {
             <div className="flex w-full h-full">
             <div className={styles.main}>
                 <div className={styles.head}>
-                    <h1>VALORANT Boosting Service</h1>
-                    <h1>Reach the rank you dreamed</h1>
+                    <SpanHeader/>
                 </div>
             </div>
             </div>
         </div>
             <div className={styles.block2}>
-                <div className={styles.menu}>
-                    <div className={styles.calculator}>
-                        <div className={styles.rank}>
-                            <div className={styles.currentRank}>
-                                <h2><p>1.</p>Текущий Ранг</h2>
-                                <div className={styles.mainOfRanks}>
-                                    {ranks.map((rank) => (
-                                        <div key={rank.id} onClick={() =>HandleCurrentRank(rank.id, rank.color)} className={`${currentRank === rank.id ? "bg-[#35383f]" : "bg-[#24272c]"} flex border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[60px] cursor-pointer`}>
-                                            <img src={`/src/assets/images/rank_png/${rank.img}`} alt="rank" draggable="false"/>
-                                        </div>
-                                    ))}
+                <div className="flex w-full gap-[20px]">
+                    <div className={styles.menu}>
+                        <div className={styles.calculator}>
+                            <div className={styles.rank}>
+                                <div className={styles.currentRank}>
+                                    <h2><p>1.</p>Текущий Ранг</h2>
+                                    <div className={styles.mainOfRanks}>
+                                        {ranks.map((rank) => (
+                                            <div key={rank.id} onClick={() =>HandleCurrentRank(rank.id, rank.color)} className={`${currentRank === rank.id ? "bg-[#35383f]" : "bg-[#24272c]"} flex border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[60px] cursor-pointer`}>
+                                                <img src={`/src/assets/images/rank_png/${rank.img}`} alt="rank" draggable="false"/>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div className={styles.numberRank}>
+                                        {
+                                            numsOfRank.map((num) => (<div key={num.id} onClick={() =>HandeNumOfCurrentRank(num.id)} className={`${currentNumOfRank === num.id ? "bg-[#35383f]": "bg-[#24272c]"} flex justify-center items-center text-[20px] font-normal border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[40px] cursor-pointer`}>{num.name}</div>
+                                            ))
+                                        }
+                                    </div>
+                                    <div className="flex w-[90%] mt-[10px] ite gap-[10px] text-white font-light">
+                                        <label>
+                                            текущий RR
+                                            <SelectMenu options={options1} onSelect={HandleCurrentRankMenu} className={styles.selectMenu}/>
+                                        </label>
+                                        <label>
+                                            Сервер
+                                            <SelectMenu options={servers} onSelect={HandleCurrentServer} className={styles.selectMenu}/>
+                                        </label>
+                                    </div>
                                 </div>
-                                <div className={styles.numberRank}>
-                                    {
-                                        numsOfRank.map((num) => (<div key={num.id} onClick={() =>HandeNumOfCurrentRank(num.id)} className={`${currentNumOfRank === num.id ? "bg-[#35383f]": "bg-[#24272c]"} flex justify-center items-center text-[20px] font-normal border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[40px] cursor-pointer`}>{num.name}</div>
-                                        ))
-                                    }
-                                </div>
-                                <div className="flex w-[90%] mt-[10px] ite gap-[10px] text-white font-light">
-                                    <label>
-                                        текущий RR
-                                        <SelectMenu options={options1} onSelect={HandleCurrentRankMenu} className={styles.selectMenu}/>
-                                    </label>
-                                    <label>
-                                        Сервер
-                                        <SelectMenu options={servers} onSelect={HandleCurrentServer} className={styles.selectMenu}/>
-                                    </label>
-                                </div>
-                            </div>
-                            <div className={styles.desireRank}>
-                                <h2><p>2.</p>Желаемый Ранг</h2>
-                                <div className={styles.mainOfRanks}>
-                                    {ranks.map((rank) => (
-                                        <div key={rank.id} onClick={() =>HandeDesireRank(rank.id, rank.color)} className={`${desireRank === rank.id ? "bg-[#35383f]": "bg-[#24272c]"}  flex border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[60px] cursor-pointer`}>
-                                            <img src={`/src/assets/images/rank_png/${rank.img}`} alt="rank" draggable="false" />
-                                        </div>
-                                    ))}
-                                </div>
-                                <div className={styles.numberRank}>
-                                    {
-                                        numsOfRank.map((num) => (<div key={num.id} onClick={() =>HandeNumOfDesireRank(num.id)} className={`${desireNumOfRank === num.id ? "bg-[#35383f]": "bg-[#24272c]"} flex justify-center items-center text-[20px] font-normal border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[40px] cursor-pointer`}>{num.name}</div>
-                                        ))
-                                    }
-                                </div>
-                                <div className="flex w-[90%] mt-[10px] text-white font-light">
-                                    <label>
-                                        RR
-                                        <SelectMenu options={options1} onSelect={HandleDesireRankMenu} className={styles.selectMenu} />
-                                    </label>
+                                <div className={styles.desireRank}>
+                                    <h2><p>2.</p>Желаемый Ранг</h2>
+                                    <div className={styles.mainOfRanks}>
+                                        {ranks.map((rank) => (
+                                            <div key={rank.id} onClick={() =>HandeDesireRank(rank.id, rank.color)} className={`${desireRank === rank.id ? "bg-[#35383f]": "bg-[#24272c]"}  flex border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[60px] cursor-pointer`}>
+                                                <img src={`/src/assets/images/rank_png/${rank.img}`} alt="rank" draggable="false" />
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div className={styles.numberRank}>
+                                        {
+                                            numsOfRank.map((num) => (<div key={num.id} onClick={() =>HandeNumOfDesireRank(num.id)} className={`${desireNumOfRank === num.id ? "bg-[#35383f]": "bg-[#24272c]"} flex justify-center items-center text-[20px] font-normal border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[40px] cursor-pointer`}>{num.name}</div>
+                                            ))
+                                        }
+                                    </div>
+                                    <div className="flex w-[90%] mt-[10px] text-white font-light">
+                                        <label>
+                                            RR
+                                            <SelectMenu options={options1} onSelect={HandleDesireRankMenu} className={styles.selectMenu} />
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className={styles.result}>
-                    <div>
+                    <div className={styles.result}>
+                        <div>
 
-                    </div>
-                    {switches.map((item) => (
-                        <ToggleSwitch key={item.id} name={item.name} value={item.percent}  onCheck={handleCheck}/>
+                        </div>
+                        {switches.map((item) => (
+                            <ToggleSwitch key={item.id} name={item.name} value={item.percent}  onCheck={handleCheck}/>
                         ))}
-                    <h1 className="text-white text-[30px] whitespace-nowrap">Итог: {percents === 0 ? calculatedPrice : calculatedPrice + calculatedPrice*percents/100}$</h1>
+                        <h1 className="text-white text-[30px] whitespace-nowrap">Итог: {percents === 0 ? calculatedPrice : calculatedPrice + calculatedPrice*percents/100}$</h1>
+                    </div>
                 </div>
+                <WhyWe/>
+
             </div>
             <Footer/>
         </>
