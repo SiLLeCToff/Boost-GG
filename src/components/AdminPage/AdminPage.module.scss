@@ -1,0 +1,102 @@
+@import  "../../sass/variables";
+
+.ros {
+  * {
+    @apply outline outline-[1px];
+  }
+
+}
+
+.container {
+  background-color: $background-dark;
+      @apply
+              w-full
+              min-h-screen
+              flex
+              text-white;
+
+      nav {
+        background-color: $background-dark;
+        position: relative;
+        overflow: hidden;
+
+        @apply 2xl:w-[15%] xl:w-[18%] flex items-center flex-col relative;
+
+
+        h1 {
+          @apply flex whitespace-nowrap text-[30px] font-bold;
+                  p {
+                    color: $accent;
+                  }
+        }
+
+        ul {
+          @apply mt-[40%] w-full flex flex-col items-center 2xl:gap-[30px] xl:gap-[20px];
+
+              li {
+                @apply flex w-[80%] gap-x-[30px] justify-start p-[15px] rounded-[15px] cursor-pointer transition-all duration-300;
+
+                img {
+                  @apply flex w-[24px] h-[24px];
+                }
+
+
+              }
+          .currentLi {
+            background-color: rgba($accent, 0.2);
+            transition: transform 0.3s ease;
+            @apply bg-opacity-10 backdrop-blur-3xl;
+          }
+        }
+        .shadow {
+          content: '';
+          top: 15%;
+          right: -80%;
+          position: absolute;
+          width: 100%;
+          height: 35%;
+          background: linear-gradient(0deg, rgba(255, 0, 106, 0.4), rgb(126, 2, 255, 0.4));
+          filter: blur(30px);
+          @apply rounded-full;
+        }
+      }
+
+
+
+      main {
+        @apply flex flex-col items-center gap-[50px] py-[15px] 2xl:w-[85%] xl:w-[88%];
+
+        header {
+                @apply flex w-[90%] justify-end;
+
+                      .profile {
+                          @apply flex justify-center gap-[10px] items-center;
+                      }
+                    }
+      }
+
+        .welcome {
+                    @apply w-[90%];
+                        h1 {
+                          @apply flex font-light text-[25px];
+
+                          span {
+                            @apply flex opacity-50
+                          }
+
+                          p {
+                            @apply flex font-bold;
+                          }
+                        }
+        }
+
+
+        .block {
+          @apply flex w-[90%] h-full;
+
+                .news {
+                  background-color: $ui-background;
+                  @apply rounded-2xl w-[700px] h-[500px]
+                }
+        }
+}

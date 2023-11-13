@@ -11,10 +11,10 @@ export const calculateTotalPrice = ({
     desireRank,
     currentNumOfRank,
     desireNumOfRank,
-    ranks} : {currentRank: number, desireRank: number, currentNumOfRank: number,desireNumOfRank: number, ranks: Rank[]}
+    ranksList} : {currentRank: number, desireRank: number, currentNumOfRank: number,desireNumOfRank: number, ranksList: Rank[]}
 ) => {
-    const currentRankObject = ranks.find((rank) => rank.id === currentRank);
-    const desireRankObject = ranks.find((rank) => rank.id === desireRank);
+    const currentRankObject = ranksList.find((rank) => rank.id === currentRank);
+    const desireRankObject = ranksList.find((rank) => rank.id === desireRank);
 
 
     if (currentRankObject && desireRankObject) {
@@ -46,7 +46,7 @@ export const calculateTotalPrice = ({
             }
 
             for (let j = currentRank + 1; j < desireRank; j++) {
-                const intermediateRankObject = ranks.find((rank) => rank.id === j);
+                const intermediateRankObject = ranksList.find((rank) => rank.id === j);
                 if (intermediateRankObject) {
                     for (let i = 1; i <= Object.keys(intermediateRankObject.prices).length; i++) {
                         totalPrice += (intermediateRankObject.prices as Record<number, number>)[i];

@@ -1,0 +1,49 @@
+@import  "../../../sass/variables";
+
+//* {
+//  @apply outline outline-[1px];
+//}
+
+.container {
+  @apply flex flex-col w-[90%] h-[100%];
+
+            main {
+              @apply flex w-full h-full;
+
+                    .filter {
+                      background-color: $ui-background;
+                      border-radius: 20px 20px 0 0;
+                      @apply flex w-full h-[10%] px-[20px];
+
+                          ul {
+                            @apply flex w-full justify-between items-center;
+
+                                li {
+                                  @apply flex gap-[5px] w-[20%] justify-center items-center;
+                                }
+                          }
+
+                    }
+
+                    .list {
+                            background-color: $ui-background;
+                            border-radius: 0 0 20px 20px;
+                            @apply flex w-full h-[90%] flex-col items-center py-[20px];
+
+
+                            .user {
+                                    background-color: #40445d;
+                                    border-color: #292b3c;
+                                    &:hover {
+                                      background-color: #545874;
+                                    }
+                                    @apply flex w-[98%] py-[20px] border-b-[1px] transition-all duration-300 last:border-none cursor-pointer;
+
+                                        p {
+                                          @apply flex w-[20%] justify-center;
+                                        }
+                            }
+                    }
+
+            }
+}

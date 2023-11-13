@@ -13,10 +13,9 @@ const WhyWe = () => {
         <div className={styles.main}>
             <h1 >Почему&nbsp;<p>BOOST</p>.<span>GG</span>&nbsp;?</h1>
             <h2>Мы предлагаем:</h2>
-
             <div className="flex flex-wrap gap-[50px] mt-[50px] items-center justify-center">
                 {list.map((item) => (
-                    <div className={styles.box}>
+                    <div key={item.id} className={styles.box}>
                         <div className={styles.content}>
                             <h3 >{item.name}<p>{item.text}</p></h3>
                         </div>

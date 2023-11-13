@@ -1,10 +1,9 @@
+import AdminPage from "../components/AdminPage/AdminPage.tsx";
 
 
 const Admin = () => {
     return (
-        <div>
-            <h1>ADMIN</h1>
-        </div>
+        <AdminPage/>
     );
 };
 

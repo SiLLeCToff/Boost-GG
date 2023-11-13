@@ -14,7 +14,7 @@ const authSlice = createSlice({
     initialState: {
         _id:null,
         isAuthenticated: false,
-        role: "GUEST",
+        role: "ADMIN",
         accessToken: null,
         email: null,
         balance: null,

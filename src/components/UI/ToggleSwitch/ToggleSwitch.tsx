@@ -1,4 +1,4 @@
-import styles from "../../MainPage/MainBody.module.scss";
+import styles from "../../MainPage/CheckList/CheckList.module.scss";
 import {useState} from "react";
 
 

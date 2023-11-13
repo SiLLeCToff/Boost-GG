@@ -1,0 +1,14 @@
+.welcome {
+  @apply flex w-[90%];
+  h1 {
+    @apply flex font-light text-[25px];
+
+    span {
+      @apply flex opacity-50;
+    }
+
+    p {
+      @apply flex font-bold;
+    }
+  }
+}

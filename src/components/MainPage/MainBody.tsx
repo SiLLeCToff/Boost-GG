@@ -3,31 +3,36 @@ import styles from "./MainBody.module.scss"
 import Header from "../Header/Header.tsx";
 import Footer from "../Footer/Footer.tsx";
 import SelectMenu from "../UI/SelectMenu/SelectMenu.tsx";
-import ToggleSwitch from "../UI/ToggleSwitch/ToggleSwitch.tsx";
 import {calculateTotalPrice} from "./Calculator/calculateTotalPrice.tsx";
 import SpanHeader from "./SpanHeader/SpanHeader.tsx";
 import WhyWe from "./WhyWe/WhyWe.tsx";
+import CheckList from "./CheckList/CheckList.tsx";
 
 
 const MainBody = () => {
-    const [currentRank, setCurrentRank] = useState(2)
-    const [currentNumOfRank, setCurrentNumOfRank] = useState(1)
-    const [desireRank, setDesireRank] = useState(6)
-    const [desireNumOfRank, setDesireNumOfRank] = useState(3)
+    const [ranks, setRanks] = useState({
+        currentRank: 2,
+        currentNumOfRank: 1,
+        currentColor: "hsl(40,79%,20%)",
+        currentImg: "Bronze.png",
+        desireRank: 6,
+        desireNumOfRank: 3,
+        desireColor: "hsl(266,80%,68%)",
+        desireImg: "Diamond.png",
+
+    })
     const [percents, setPercents] = useState(0)
-    const [currentColor, setCurrentColor] = useState("hsl(40,79%,20%)")
-    const [desireColor, setDesireColor] = useState("hsl(266,80%,68%)")
 
     const colorObject = {
-        currentColor: currentColor,
-        desireColor: desireColor,
+        currentColor: ranks.currentColor,
+        desireColor: ranks.desireColor,
     };
 
 // Передача цвета в CSS
     document.documentElement.style.setProperty('--color-current', colorObject.currentColor);
     document.documentElement.style.setProperty('--color-desire', colorObject.desireColor);
 
-   const ranks: {name: string, id: number, img: string, prices: object, color: string}[] = [
+   const ranksList: {name: string, id: number, img: string, prices: object, color: string}[] = [
         {name: "Железо", id: 1, img: "Iron.png", prices: { 1: 5, 2: 5, 3: 5 }, color: "hsl(210, 2%, 49%)"},
        {name: "Бронза", id: 2, img: "Bronze.png", prices: { 1: 6, 2: 7, 3: 8 }, color: "hsl(39,70%,42%)"},
        {name: "Серебро", id: 3, img: "Silver.png", prices: { 1: 15, 2: 16, 3: 17 }, color: "hsl(205,8%,72%)"},
@@ -67,32 +72,45 @@ const MainBody = () => {
 
     const calculatedPrice = useMemo(() => {
         return calculateTotalPrice({
-            currentRank,
-            desireRank,
-            currentNumOfRank,
-            desireNumOfRank,
-            ranks,
+            currentRank : ranks.currentRank,
+            desireRank : ranks.desireRank,
+            currentNumOfRank : ranks.currentNumOfRank,
+            desireNumOfRank : ranks.desireNumOfRank,
+            ranksList,
         }
         );
 
-    }, [currentRank, desireRank, currentNumOfRank, desireNumOfRank, ranks]);
+    }, [ranks.currentRank, ranks.desireRank, ranks.currentNumOfRank, ranks.desireNumOfRank, ranksList]);
 
-   const HandleCurrentRank = (rankId: number, color: string) => {
-        setCurrentRank(rankId)
-       setCurrentColor(color)
+
+   const HandleCurrentRank = (rankId: number, color: string, img: string) => {
+        setRanks((prev) => ({...prev,
+            currentRank: rankId,
+            currentColor: color,
+            currentImg: img,
+        }))
     }
 
     const HandeNumOfCurrentRank = (numId: number) => {
-        setCurrentNumOfRank(numId)
+       setRanks((prev) => ({
+           ...prev,
+           currentNumOfRank: numId
+       }))
     }
 
-    const HandeDesireRank = (rankId: number,color: string) => {
-        setDesireRank(rankId)
-        setDesireColor(color)
+    const HandeDesireRank = (rankId: number,color: string, img: string) => {
+        setRanks((prev) => ({...prev,
+            desireRank: rankId,
+            desireColor: color,
+            desireImg: img,
+        }))
     }
 
     const HandeNumOfDesireRank = (numId: number) => {
-        setDesireNumOfRank(numId)
+        setRanks((prev) => ({
+            ...prev,
+            desireNumOfRank: numId
+        }))
     }
 
    const HandleCurrentRankMenu = (selectedValue: string) => {
@@ -107,19 +125,13 @@ const MainBody = () => {
         console.log(selectedValue)
    }
 
-
-
     const handleCheck = (value: number, isChecked: boolean) => {
-        if (isChecked) {
-            setPercents(percents + value);
-        } else {
-            setPercents(percents - value);
-        }
+       isChecked ? setPercents(percents + value) : setPercents(percents - value);
     };
     return (
         <>
         <div className={styles.container}>
-            <img src="src/assets/images/bg.png" className={styles.background} alt="background"/>
+            <img src="/src/assets/images/bg.png" className={styles.background} alt="background"/>
             <Header/>
             <div className="flex w-full h-full">
             <div className={styles.main}>
@@ -137,15 +149,15 @@ const MainBody = () => {
                                 <div className={styles.currentRank}>
                                     <h2><p>1.</p>Текущий Ранг</h2>
                                     <div className={styles.mainOfRanks}>
-                                        {ranks.map((rank) => (
-                                            <div key={rank.id} onClick={() =>HandleCurrentRank(rank.id, rank.color)} className={`${currentRank === rank.id ? "bg-[#35383f]" : "bg-[#24272c]"} flex border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[60px] cursor-pointer`}>
+                                        {ranksList.map((rank) => (
+                                            <div key={rank.id} onClick={() =>HandleCurrentRank(rank.id, rank.color,rank.img)} className={`${ranks.currentRank === rank.id ? "bg-[#35383f]" : "bg-[#24272c]"} flex border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[60px] cursor-pointer hover:bg-[#35383f]`}>
                                                 <img src={`/src/assets/images/rank_png/${rank.img}`} alt="rank" draggable="false"/>
                                             </div>
                                         ))}
                                     </div>
                                     <div className={styles.numberRank}>
                                         {
-                                            numsOfRank.map((num) => (<div key={num.id} onClick={() =>HandeNumOfCurrentRank(num.id)} className={`${currentNumOfRank === num.id ? "bg-[#35383f]": "bg-[#24272c]"} flex justify-center items-center text-[20px] font-normal border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[40px] cursor-pointer`}>{num.name}</div>
+                                            numsOfRank.map((num) => (<div key={num.id} onClick={() =>HandeNumOfCurrentRank(num.id)} className={`${ranks.currentNumOfRank === num.id ? "bg-[#35383f]": "bg-[#24272c]"} flex justify-center items-center text-[20px] font-normal border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[40px] hover:bg-[#35383f] cursor-pointer`}>{num.name}</div>
                                             ))
                                         }
                                     </div>
@@ -163,15 +175,15 @@ const MainBody = () => {
                                 <div className={styles.desireRank}>
                                     <h2><p>2.</p>Желаемый Ранг</h2>
                                     <div className={styles.mainOfRanks}>
-                                        {ranks.map((rank) => (
-                                            <div key={rank.id} onClick={() =>HandeDesireRank(rank.id, rank.color)} className={`${desireRank === rank.id ? "bg-[#35383f]": "bg-[#24272c]"}  flex border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[60px] cursor-pointer`}>
+                                        {ranksList.map((rank) => (
+                                            <div key={rank.id} onClick={() =>HandeDesireRank(rank.id, rank.color, rank.img)} className={`${ranks.desireRank === rank.id ? "bg-[#35383f]": "bg-[#24272c]"}  flex border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[60px] hover:bg-[#35383f] cursor-pointer`}>
                                                 <img src={`/src/assets/images/rank_png/${rank.img}`} alt="rank" draggable="false" />
                                             </div>
                                         ))}
                                     </div>
                                     <div className={styles.numberRank}>
                                         {
-                                            numsOfRank.map((num) => (<div key={num.id} onClick={() =>HandeNumOfDesireRank(num.id)} className={`${desireNumOfRank === num.id ? "bg-[#35383f]": "bg-[#24272c]"} flex justify-center items-center text-[20px] font-normal border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[40px] cursor-pointer`}>{num.name}</div>
+                                            numsOfRank.map((num) => (<div key={num.id} onClick={() =>HandeNumOfDesireRank(num.id)} className={`${ranks.desireNumOfRank === num.id ? "bg-[#35383f]": "bg-[#24272c]"} flex justify-center items-center text-[20px] font-normal border-t border-t-gray-600 active:border active:border-[#24272c] rounded-[5px] p-[10px] w-[60px] h-[40px] hover:bg-[#35383f] cursor-pointer`}>{num.name}</div>
                                             ))
                                         }
                                     </div>
@@ -185,15 +197,7 @@ const MainBody = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.result}>
-                        <div>
-
-                        </div>
-                        {switches.map((item) => (
-                            <ToggleSwitch key={item.id} name={item.name} value={item.percent}  onCheck={handleCheck}/>
-                        ))}
-                        <h1 className="text-white text-[30px] whitespace-nowrap">Итог: {percents === 0 ? calculatedPrice : calculatedPrice + calculatedPrice*percents/100}$</h1>
-                    </div>
+                    <CheckList currentImg={ranks.currentImg} desireImg={ranks.desireImg} switches={switches} percents={percents} calculatedPrice={calculatedPrice} handleCheck={handleCheck}/>
                 </div>
                 <WhyWe/>
 
